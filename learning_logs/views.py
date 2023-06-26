@@ -25,7 +25,7 @@ def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     if topic.owner != request.user:
         raise Http404
-    
+
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
@@ -76,6 +76,8 @@ def edit_entry(request, entry_id):
     """Edit an exiting entry."""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    if topic.owner != request.user:
+        raise Http404
 
     if request.method != 'POST':
         # Initial request; pre-fill from with the current entry.
