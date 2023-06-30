@@ -1,4 +1,4 @@
-{% load django_bootstrap5 %}
+{% load bootstrap4 %}
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +9,7 @@
     <title>Learning Log</title>
 
     {% bootstrap_css %}
-    {% bootstrap_javascript %}
+    {% bootstrap_javascript jquery='full' %}
 
 </head>
 <body>
@@ -21,7 +21,7 @@
 
         <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarCollapse" aria-controls="navbarCollapse"
-                aria-expanded="false" aria-label="toggle-navigation">
+                aria-expanded="false" aria-label="Toggle-navigation">
             <span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
