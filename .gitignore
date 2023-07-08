@@ -1,9 +1,3 @@
-__pycache__/
-
-*.pyc
-notes/
-
-*_env/
-*_env*/
-
-*.DS_Store
+ll_env/
+__pychache__/
+*.sqlite3
